@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../Style/materi.css.css" />
-    <link rel="stylesheet" href="../bootstrap/css/Bootstrap.min.css" />
-    <link rel="stylesheet" href="../fontawesome-free-6.5.2-web/css/all.min.css" />
+    <link rel="stylesheet" href="Style/materi.css.css" />
+    <link rel="stylesheet" href="bootstrap/css/Bootstrap.min.css" />
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.min.css" />
     <style>
       @media screen and (max-width: 280px) {
         .navbar-brand {
@@ -41,7 +41,7 @@
       }
     </style>
   </head>
-  <!-- ======= Header ======= -->
+
   <body class="sb-nav-fixed" onload="readlah()">
     <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #a2cdcd">
       <!-- Navbar Brand-->
@@ -71,6 +71,7 @@
                 <ol style="text-align: justify">
                   <p>
                     <li class="fs-5">Kuis ini terdiri dari 10 soal.</li>
+                    <li class="fs-5">Setiap soal memiliki 10 poin.</li>
                     <li class="fs-5">Tekan "Mulai Kuis", jika data diri kamu sudah benar.</li>
                     <li class="fs-5">Setiap pertanyaan memiliki empat pilihan jawaban yang ditandai dengan huruf A, B, C, dan D.</li>
                     <li class="fs-5">Pilihlah satu jawaban yang paling benar untuk setiap pertanyaan.</li>
@@ -110,7 +111,7 @@
                     </div>
                     <br />
                     <div class="d-grid gap-2 d-md-block">
-                      <a class="btn btn-danger" href="../Materi1.html">Kembali Ke Materi</a>
+                      <a class="btn btn-danger" href="Materi1.html">Kembali Ke Materi</a>
                       <div class="button btn btn-primary">Mulai Kuis</div>
                     </div>
                   </div>
@@ -733,7 +734,7 @@
             <!-- SKOR-->
             <div class="dataaa hilang" id="halskor">
               <div class="mt-0">
-                <div class="row mb-3 text-center" style="background-color: #89aa6b">
+                <div class="row mb-3 text-center" style="background-color: #0d6efd">
                   <h4 class="fw-bold my-3 text-white">Hasil Kuis 1</h4>
                 </div>
 
@@ -744,28 +745,28 @@
                         <tr>
                           <td class="ket_hasil">Nama Lengkap</td>
                           <td>:</td>
-                          <td class="nama">piyah</td>
+                          <td class="nama"></td>
                         </tr>
                         <tr>
                           <td class="ket_hasil">NISN</td>
                           <td>:</td>
-                          <td class="nisn">123</td>
+                          <td class="nisn"></td>
                         </tr>
                         <tr>
                           <td class="ket_hasil">Kelas</td>
                           <td>:</td>
-                          <td class="kelas">V</td>
+                          <td class="kelas"></td>
                         </tr>
                         <tr>
                           <td class="ket_hasil">Sekolah</td>
                           <td>:</td>
-                          <td class="sekolah">SD</td>
+                          <td class="sekolah"></td>
                         </tr>
 
                         <tr>
                           <td class="ket_hasil">Hari, Tgl</td>
                           <td>:</td>
-                          <td class="hari">senin</td>
+                          <td class="hari"></td>
                         </tr>
                         <tr>
                           <td class="ket_hasil">Waktu Selesai</td>
@@ -783,7 +784,7 @@
                 </div>
 
                 <div class="text-center">
-                  <!--<a class="mb-3 button btn btn-danger" href="../">Kembali Ke Materi</a>-->
+                  <!--<a class="mb-3 button btn btn-danger" href="../file/materi1.html">Kembali Ke Materi</a>-->
                   <div id="ulang" class="fw-bold hilang">
                     <h5 class="text-danger">Kamu belum lulus, nilaimu masih belum memenuhi KKM</h5>
                     <br />
@@ -804,25 +805,24 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../Kuis/Kuis1.js" type="module"></script>
-    <script src="../javascript/Script.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="javascript/Cekmateri.js" type="module"></script>
+    <script src="javascript/Script.js"></script>
 
     <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-      import { getDatabase, ref, get, set, push, child, onChildAdded, onValue, update } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import { getDatabase, ref, set, push, child, onValue, get } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+        
+const firebaseConfig = {
+  apiKey: "AIzaSyDUbkzRquQl23eOEYvaNb_rThj3nlAVAx4",
+  authDomain: "bangun-ruang-67fb3.firebaseapp.com",
+  databaseURL: "https://bangun-ruang-67fb3-default-rtdb.firebaseio.com",
+  projectId: "bangun-ruang-67fb3",
+  storageBucket: "bangun-ruang-67fb3.appspot.com",
+  messagingSenderId: "360433130501",
+  appId: "1:360433130501:web:a5aa3a1e6bb1b2e7e8906c"
+};
 
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-    apiKey: "AIzaSyDUbkzRquQl23eOEYvaNb_rThj3nlAVAx4",
-    authDomain: "bangun-ruang-67fb3.firebaseapp.com",
-    databaseURL: "https://bangun-ruang-67fb3-default-rtdb.firebaseio.com",
-    projectId: "bangun-ruang-67fb3",
-    storageBucket: "bangun-ruang-67fb3.appspot.com",
-    messagingSenderId: "360433130501",
-    appId: "1:360433130501:web:a5aa3a1e6bb1b2e7e8906c"
-  };
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       //const db = getDatabase();
@@ -836,7 +836,7 @@
       let nama = sessionStorage.getItem("nama");
       let nisn = sessionStorage.getItem("nisn");
       let kelas = sessionStorage.getItem("kelas");
-      let kelasID = sessionStorage.getItem("kelas-id");
+      // let kelasID = sessionStorage.getItem("kelas-id");
       let sekolah = sessionStorage.getItem("sekolah");
 
       userlink.innerText = nama;
@@ -1179,7 +1179,7 @@
           console.log(localStorage);
         }
       };
-      dat.open("GET", "kuis1.json", true);
+      dat.open("GET", "Kuis1.json", true);
       dat.send();
 
       // FUNGSI WAKTU DAN HARI
